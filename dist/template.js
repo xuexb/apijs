@@ -1,7 +1,7 @@
 /**
  * @file 模板编译，使用art-template
  * @author xiaowu
- * @email fe.xiaowu@gmailc.com
+ * @email fe.xiaowu@gmail.com
  */
 
 'use strict';

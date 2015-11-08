@@ -1,7 +1,7 @@
 /**
  * @file 路径
  * @author xiaowu
- * @email fe.xiaowu@gmailc.com
+ * @email fe.xiaowu@gmail.com
  */
 
 'use strict';

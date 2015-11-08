@@ -1,7 +1,7 @@
 /**
  * @file 提示的配置文件
  * @author xiaowu
- * @email fe.xiaowu@gmailc.com
+ * @email fe.xiaowu@gmail.com
  */
 
 'use strict';
