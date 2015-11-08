@@ -1,6 +1,6 @@
 {
   "name": "apijs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "本地接口测试",
   "main": "dist/main.js",
   "scripts": {
@@ -35,6 +35,9 @@
     "fecs": "^0.4.12"
   },
   "keywords": [
-    "testajax"
+    "api",
+    "mock",
+    "ajax",
+    "apijs"
   ]
 }

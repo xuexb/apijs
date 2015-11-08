@@ -20,7 +20,7 @@ import update from './update';
 import template from './template';
 import Util from './util';
 
-export default class TestAjax {
+export default class Apijs {
     constructor(options = {}) {
         // 合并配置
         this.__config = extend(true, config, options);

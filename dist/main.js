@@ -64,11 +64,11 @@ var _util = require('./util');
 
 var _util2 = _interopRequireDefault(_util);
 
-var TestAjax = (function () {
-    function TestAjax() {
+var Apijs = (function () {
+    function Apijs() {
         var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
-        _classCallCheck(this, TestAjax);
+        _classCallCheck(this, Apijs);
 
         // 合并配置
         this.__config = (0, _extend2['default'])(true, _config2['default'], options);
@@ -85,7 +85,7 @@ var TestAjax = (function () {
      * @private
      */
 
-    _createClass(TestAjax, [{
+    _createClass(Apijs, [{
         key: '_init',
         value: function _init() {
             var self = this;
@@ -281,8 +281,8 @@ var TestAjax = (function () {
         }
     }]);
 
-    return TestAjax;
+    return Apijs;
 })();
 
-exports['default'] = TestAjax;
+exports['default'] = Apijs;
 module.exports = exports['default'];
