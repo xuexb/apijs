@@ -36,10 +36,11 @@ var util = {};
 util.parseJSON = function () {
     var str = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
 
-    /* eslint-disable fecs-no-eval*/
-
-    /* eslint-disable no-eval*/
+    /* eslint-disable fecs-no-eval */
+    /* eslint-disable no-eval */
     return eval('(' + str + ')');
+    /* eslint-enable fecs-no-eval */
+    /* eslint-enable no-eval */
     // return new Function('return ' + str)();
 };
 

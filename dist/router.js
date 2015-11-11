@@ -61,7 +61,11 @@ var _util = require('./util');
 var _util2 = _interopRequireDefault(_util);
 
 var app = undefined;
-var router = _express2['default'].Router();
+/* eslint-disable fecs-camelcase */
+/* eslint-disable camelcase */
+var router = _express2['default'].outer();
+/* eslint-enable fecs-camelcase */
+/* eslint-enable camelcase */
 
 var renderDocTree = function renderDocTree(data, uri, group) {
     var filter = function filter(val) {
@@ -87,14 +91,12 @@ var renderDocTree = function renderDocTree(data, uri, group) {
                 html += '\n                    <div class="nav-tree-text">\n                        <a href="' + val.uri + '" class="nav-tree-file-a" data-uri="' + val.uri + '" title="' + val.text + '">\n                            ' + val.text + '\n                        </a>\n                    </div>\n                </li>\n                ';
             } else {
                 if (filter(val)) {
-                    html += '<li class="nav-tree-dir nav-tree-dir-open">';
+                    html += '\n                        <li class="nav-tree-dir nav-tree-dir-open">\n                    ';
                 } else {
-                    html += '<li class="nav-tree-dir">';
+                    html += '\n                        <li class="nav-tree-dir">\n                    ';
                 }
 
-                html += '<div class="nav-tree-text">';
-                html += '<a href="#" class="nav-tree-dir-a" data-uri="' + val.uri + '" title="' + val.text + '">' + val.text + '</a>';
-                html += '</div>';
+                html += '\n                    <div class="nav-tree-text">\n                        <a href="#" class="nav-tree-dir-a" data-uri="' + val.uri + '" title="' + val.text + '">' + val.text + '</a>\n                    </div>\n                ';
 
                 html += fn(val.children);
 
@@ -112,7 +114,6 @@ var renderDocTree = function renderDocTree(data, uri, group) {
  * 解析uri，传的uri里必须缓存过
  */
 router.param('uri', function (req, res, next, id) {
-    var config = app.config();
     var filepath = app.getUriToPath(id);
 
     if (!_fs2['default'].existsSync(filepath)) {
@@ -161,7 +162,6 @@ router.get('/admin/edit/:uri', function (req, res, next) {
     }
 
     var data = undefined;
-    var config = app.config();
     var filepath = app.getUriToPath(uri);
 
     // 如果没有文件
@@ -184,7 +184,6 @@ router.get('/admin/edit/:uri', function (req, res, next) {
  * 保存
  */
 router.post('/admin/save', function (req, res, next) {
-    var config = app.config();
     var data = req.body;
 
     // 生成uri
@@ -234,7 +233,7 @@ router.post('/admin/save', function (req, res, next) {
     var filepath = app.getUriToPath(uri);
 
     // 创建缓存目录
-    _mkdirP2['default'].sync(config.cachePath);
+    _mkdirP2['default'].sync(app.config('cachePath'));
 
     // 写文件
     _fs2['default'].writeFileSync(filepath, JSON.stringify(data));

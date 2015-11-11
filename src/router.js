@@ -21,7 +21,11 @@ import tips from './tips';
 import Util from './util';
 
 let app;
-let router = express.Router();
+/* eslint-disable fecs-camelcase */
+/* eslint-disable camelcase */
+let router = express.outer();
+/* eslint-enable fecs-camelcase */
+/* eslint-enable camelcase */
 
 let renderDocTree = (data, uri, group) => {
     let filter = (val) => {
@@ -92,7 +96,6 @@ let renderDocTree = (data, uri, group) => {
  * 解析uri，传的uri里必须缓存过
  */
 router.param('uri', (req, res, next, id) => {
-    let config = app.config();
     let filepath = app.getUriToPath(id);
 
     if (!fs.existsSync(filepath)) {
@@ -141,7 +144,6 @@ router.get('/admin/edit/:uri', (req, res, next) => {
     }
 
     let data;
-    let config = app.config();
     let filepath = app.getUriToPath(uri);
 
     // 如果没有文件
@@ -165,7 +167,6 @@ router.get('/admin/edit/:uri', (req, res, next) => {
  * 保存
  */
 router.post('/admin/save', (req, res, next) => {
-    let config = app.config();
     let data = req.body;
 
     // 生成uri
@@ -215,7 +216,7 @@ router.post('/admin/save', (req, res, next) => {
     let filepath = app.getUriToPath(uri);
 
     // 创建缓存目录
-    mkdirp.sync(config.cachePath);
+    mkdirp.sync(app.config('cachePath'));
 
     // 写文件
     fs.writeFileSync(filepath, JSON.stringify(data));
