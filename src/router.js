@@ -23,7 +23,7 @@ import Util from './util';
 let app;
 let router = express.Router();
 
-let renderDocTree = ((data, uri, group) => {
+let renderDocTree = (data, uri, group) => {
     let filter = (val) => {
 
         if (val.children && val.children.length) {
@@ -39,28 +39,42 @@ let renderDocTree = ((data, uri, group) => {
         res.forEach(function (val) {
             if (!val.children || !val.children.length) {
                 if (filter(val)) {
-                    html += '<li class="nav-tree-file nav-tree-current">';
+                    html += `
+                        <li class="nav-tree-file nav-tree-current">
+                    `;
                 }
                 else {
-                    html += '<li class="nav-tree-file">';
+                    html += `
+                        <li class="nav-tree-file">
+                    `;
                 }
 
-                html += '<div class="nav-tree-text">';
-                html += `<a href="${val.uri}" class="nav-tree-file-a" data-uri="${val.uri}" title="${val.text}">`;
-                html += val.text;
-                html += '</a></div></li>';
+                html += `
+                    <div class="nav-tree-text">
+                        <a href="${val.uri}" class="nav-tree-file-a" data-uri="${val.uri}" title="${val.text}">
+                            ${val.text}
+                        </a>
+                    </div>
+                </li>
+                `;
             }
             else {
                 if (filter(val)) {
-                    html += '<li class="nav-tree-dir nav-tree-dir-open">';
+                    html += `
+                        <li class="nav-tree-dir nav-tree-dir-open">
+                    `;
                 }
                 else {
-                    html += '<li class="nav-tree-dir">';
+                    html += `
+                        <li class="nav-tree-dir">
+                    `;
                 }
 
-                html += '<div class="nav-tree-text">';
-                html += `<a href="#" class="nav-tree-dir-a" data-uri="${val.uri}" title="${val.text}">${val.text}</a>`;
-                html += '</div>';
+                html += `
+                    <div class="nav-tree-text">
+                        <a href="#" class="nav-tree-dir-a" data-uri="${val.uri}" title="${val.text}">${val.text}</a>
+                    </div>
+                `;
 
                 html += fn(val.children);
 
@@ -72,7 +86,7 @@ let renderDocTree = ((data, uri, group) => {
     };
 
     return fn(data);
-});
+};
 
 /**
  * 解析uri，传的uri里必须缓存过

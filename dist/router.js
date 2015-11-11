@@ -79,15 +79,12 @@ var renderDocTree = function renderDocTree(data, uri, group) {
         res.forEach(function (val) {
             if (!val.children || !val.children.length) {
                 if (filter(val)) {
-                    html += '<li class="nav-tree-file nav-tree-current">';
+                    html += '\n                        <li class="nav-tree-file nav-tree-current">\n                    ';
                 } else {
-                    html += '<li class="nav-tree-file">';
+                    html += '\n                        <li class="nav-tree-file">\n                    ';
                 }
 
-                html += '<div class="nav-tree-text">';
-                html += '<a href="' + val.uri + '" class="nav-tree-file-a" data-uri="' + val.uri + '" title="' + val.text + '">';
-                html += val.text;
-                html += '</a></div></li>';
+                html += '\n                    <div class="nav-tree-text">\n                        <a href="' + val.uri + '" class="nav-tree-file-a" data-uri="' + val.uri + '" title="' + val.text + '">\n                            ' + val.text + '\n                        </a>\n                    </div>\n                </li>\n                ';
             } else {
                 if (filter(val)) {
                     html += '<li class="nav-tree-dir nav-tree-dir-open">';
