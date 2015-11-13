@@ -178,26 +178,26 @@ router.post('/admin/save', (req, res, next) => {
     data.version = pkg.version;
 
     // 如果有参数
-    if (data.param_name) {
+    if (data.paramName) {
         // 如果是传的一个
-        if ('string' === typeof data.param_name) {
-            data.param_name = [data.param_name];
-            data.param_type = [data.param_type];
-            data.param_required = [data.param_required];
-            data.param_desc = [data.param_desc];
+        if ('string' === typeof data.paramName) {
+            data.paramName = [data.paramName];
+            data.paramType = [data.paramType];
+            data.paramRequired = [data.paramRequired];
+            data.paramDesc = [data.paramDesc];
         }
 
         data.param = [];
-        data.param_name.forEach((val, index) => {
+        data.paramName.forEach((val, index) => {
             if (!val) {
                 return;
             }
 
             data.param.push({
                 name: val,
-                type: data.param_type[index],
-                desc: data.param_desc[index],
-                required: data.param_required[index]
+                type: data.paramType[index],
+                desc: data.paramDesc[index],
+                required: data.paramRequired[index]
             });
         });
 
@@ -207,10 +207,10 @@ router.post('/admin/save', (req, res, next) => {
     }
 
     // 删除没用参数
-    delete data.param_name;
-    delete data.param_type;
-    delete data.param_required;
-    delete data.param_desc;
+    delete data.paramName;
+    delete data.paramType;
+    delete data.paramRequired;
+    delete data.paramDesc;
 
     // 拼路径
     let filepath = app.getUriToPath(uri);

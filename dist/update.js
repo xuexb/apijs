@@ -16,17 +16,25 @@ var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
 
-var app = undefined;
-var router = _express2['default'].Router();
+// let app;
+
+/* eslint-disable fecs-camelcase */
+
+/* eslint-disable camelcase */
+var router = _express2['default'].outer();
+
+/* eslint-enable fecs-camelcase */
+
+/* eslint-enable camelcase */
 
 /**
  * 2.0.3升级3.0.0
  */
-router.get('/2.0.3-3.0.0', function (req, res, next) {});
+router.get('/', function (req, res, next) {});
 
-router.setApp = function (data) {
-  app = data;
-};
+// router.setApp = (data) => {
+//     app = data;
+// };
 
 exports['default'] = router;
 module.exports = exports['default'];

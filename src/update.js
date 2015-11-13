@@ -8,17 +8,25 @@
 
 import express from 'express';
 
-let app;
-let router = express.Router();
+// let app;
+
+/* eslint-disable fecs-camelcase */
+
+/* eslint-disable camelcase */
+let router = express.outer();
+
+/* eslint-enable fecs-camelcase */
+
+/* eslint-enable camelcase */
 
 /**
  * 2.0.3升级3.0.0
  */
-router.get('/2.0.3-3.0.0', (req, res, next) => {
+router.get('/', (req, res, next) => {
 });
 
-router.setApp = (data) => {
-    app = data;
-};
+// router.setApp = (data) => {
+//     app = data;
+// };
 
 export default router;

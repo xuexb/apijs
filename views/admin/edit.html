@@ -35,15 +35,15 @@
                     <%if(data.param){%>
                         <%data.param.forEach(function(val, index){%>
                             <dd>
-                                <input type="text" placeholder="参数名" name="param_name" value="<%=val.name%>">
-                                <input type="text" placeholder="参数说明" name="param_desc" value="<%=val.desc%>">
-                                <select name="param_type">
+                                <input type="text" placeholder="参数名" name="paramName" value="<%=val.name%>">
+                                <input type="text" placeholder="参数说明" name="paramDesc" value="<%=val.desc%>">
+                                <select name="paramType">
                                     <option value="*"<%if(val.type==='*'){%> selected<%}%>>全部类型</option>
                                     <option value="int"<%if(val.type==='int'){%> selected<%}%>>int</option>
                                     <option value="boolean"<%if(val.type==='boolean'){%> selected<%}%>>boolean</option>
                                     <option value="string"<%if(val.type==='string'){%> selected<%}%>>string</option>
                                 </select>
-                                <select name="param_required">
+                                <select name="paramRequired">
                                     <option value="0"<%if(val.required==='0'){%> selected<%}%>>否</option>
                                     <option value="1"<%if(val.required==='1'){%> selected<%}%>>是</option>
                                 </select>
@@ -86,15 +86,15 @@
     <script type="text/javascript" src="http://libs.useso.com/js/jquery/1.11.1-rc2/jquery.min.js"></script>
     <script type="text/template" id="J-param-tpl">
         <dd>
-            <input type="text" placeholder="参数名" name="param_name">
-            <input type="text" placeholder="参数说明" name="param_desc">
-            <select name="param_type">
+            <input type="text" placeholder="参数名" name="paramName">
+            <input type="text" placeholder="参数说明" name="paramDesc">
+            <select name="paramType">
                 <option value="*">全部类型</option>
                 <option value="int">int</option>
                 <option value="boolean">boolean</option>
                 <option value="string">string</option>
             </select>
-            <select name="param_required">
+            <select name="paramRequired">
                 <option value="0">否</option>
                 <option value="1">是</option>
             </select>  
