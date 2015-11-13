@@ -93,7 +93,7 @@ var Apijs = (function () {
             var app = self.express = (0, _express2['default'])();
 
             _router2['default'].setApp(self);
-            _update2['default'].setApp(self);
+            // update.setApp(self);
 
             // 配置json
             app.use(_bodyParser2['default'].urlencoded({

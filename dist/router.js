@@ -63,7 +63,7 @@ var _util2 = _interopRequireDefault(_util);
 var app = undefined;
 /* eslint-disable fecs-camelcase */
 /* eslint-disable camelcase */
-var router = _express2['default'].outer();
+var router = _express2['default'].Router();
 /* eslint-enable fecs-camelcase */
 /* eslint-enable camelcase */
 

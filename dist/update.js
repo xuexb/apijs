@@ -21,7 +21,7 @@ var _express2 = _interopRequireDefault(_express);
 /* eslint-disable fecs-camelcase */
 
 /* eslint-disable camelcase */
-var router = _express2['default'].outer();
+var router = _express2['default'].Router();
 
 /* eslint-enable fecs-camelcase */
 

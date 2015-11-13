@@ -42,7 +42,7 @@ export default class Apijs {
         let app = self.express = express();
 
         router.setApp(self);
-        update.setApp(self);
+        // update.setApp(self);
 
         // 配置json
         app.use(bodyParser.urlencoded({

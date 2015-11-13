@@ -23,7 +23,7 @@ import Util from './util';
 let app;
 /* eslint-disable fecs-camelcase */
 /* eslint-disable camelcase */
-let router = express.outer();
+let router = express.Router();
 /* eslint-enable fecs-camelcase */
 /* eslint-enable camelcase */
 
