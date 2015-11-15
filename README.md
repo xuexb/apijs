@@ -1,6 +1,6 @@
 # apijs - 接口模拟
 
-> 内容同步于 [apijs.xuexb.com](https://apijs.org/)
+> 内容同步于 [https://apijs.org/](https://apijs.org/)
 
 * [前言](doc/1.md)
 * [设计思路](doc/2.md)
