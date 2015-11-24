@@ -1,0 +1,24 @@
+{
+  "name": "apijs-doc",
+  "version": "0.0.1",
+  "description": "apijs-doc",
+  "scripts": {
+    "start": "pm2 start index.js --name apijs -e err.log -o out.log",
+    "stop": "pm2 delete index.js",
+    "restart": "pm2 restart index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xuexb/apijs.git"
+  },
+  "author": "xiaowu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xuexb/apijs/issues"
+  },
+  "homepage": "https://github.com/xuexb/apijs",
+  "devDependencies": {
+    "mdjs": "0.0.6",
+    "pm2": "^0.15.10"
+  }
+}
