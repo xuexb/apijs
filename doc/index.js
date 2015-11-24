@@ -8,7 +8,7 @@ var app = new Mdjs({
     "cache_path": "../__cache/",
     "name": "apijs",
     "dir_alias": {
-        "doc": "文档"
+        "doc": "文档y"
     }
 });
 
