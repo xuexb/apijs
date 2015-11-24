@@ -9,7 +9,7 @@ var app = new Mdjs({
     "cache_path": "../__cache/",
     "name": "apijs",
     "dir_alias": {
-        "doc": "文档yxd"
+        "doc": "文档yxds"
     }
 });
 
@@ -22,6 +22,8 @@ app.express.post('/api/update', function (req, res, next) {
 
         // 清空缓存
         app.clear_cache();
+
+        console.log('clear_cache');
 
         // 重启pm2，重启是为了让配置生效
         child_process.exec('npm run restart', {
