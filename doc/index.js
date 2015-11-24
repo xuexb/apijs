@@ -15,14 +15,18 @@ var app = new Mdjs({
 
 // 更新勾子
 app.express.post('/api/update', function (req, res, next) {
-    child_process.exec('git pull', function (a, b) {
+    child_process.exec('git pull', {
+        cwd: app.options.root + '/doc/'
+    }, function (a, b) {
         console.log('更新成功', b);
 
         // 清空缓存
         app.clear_cache();
 
         // 重启pm2，重启是为了让配置生效
-        child_process.exec('npm run restart', function(){
+        child_process.exec('npm run restart', {
+            cwd: app.options.root + '/doc/'
+        }, function(){
             console.log('npm run restart');
         });
     });
