@@ -1,6 +1,7 @@
 'use strict';
 
 var Mdjs = require('mdjs');
+var child_process = require('child_process');
 
 var app = new Mdjs({
     "port": 8002,
