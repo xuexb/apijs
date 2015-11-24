@@ -15,7 +15,7 @@ var app = new Mdjs({
 
 // 更新勾子
 app.express.post('/api/update', function (req, res, next) {
-    child_process.exec('git pull', {
+    child_process.exec('pwd && git pull', {
         cwd: app.options.root + '/doc/'
     }, function (a, b) {
         console.log('更新成功', b);
