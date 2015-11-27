@@ -20,12 +20,10 @@ app.express.post('/api/update', function (req, res, next) {
 
         // 清空缓存
         app.clear_cache();
-
-        // 重启pm2，重启是为了让配置生效
-        child_process.exec('npm run restart', function(){
-            console.log('npm run restart');
-        });
     });
 
     res.end('ok');
 });
+
+// 运行
+app.run();

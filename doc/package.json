@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/xuexb/apijs",
   "devDependencies": {
-    "mdjs": "0.0.6",
-    "pm2": "^0.15.10"
+    "mdjs": "0.x.x",
+    "pm2": "0.x.x"
   }
 }
