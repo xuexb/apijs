@@ -1,7 +1,7 @@
 {
-  "name": "apijs-doc",
+  "name": "apijs",
   "version": "0.0.1",
-  "description": "apijs-doc",
+  "description": "apijs",
   "scripts": {
     "start": "pm2 start index.js --name apijs -e err.log -o out.log",
     "stop": "pm2 delete index.js",
