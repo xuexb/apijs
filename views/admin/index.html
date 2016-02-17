@@ -49,14 +49,10 @@
                     <ul>
                         <%list[key].forEach(function(val, index){%>
                             <li>
-                                <div class="fl">
-                                    <a href="<%=val.url%>" target="_blank"><%=val.url%></a> <%if(val.desc){%>[<%=val.desc%>]<%}%>
-                                </div>
-                                <div class="fr">
-                                    <a href="/admin/edit/<%=val.uri%>">编辑</a>
-                                    <a onclick="return confirm('确认删除吗？');" href="/admin/del/<%=val.uri%>">删除</a>
-                                    <a href="/doc/<%=val.uri%>" target="_blank">文档</a>
-                                </div>
+                                <a href="<%=val.url%>" target="_blank"><%=val.url%></a> <%if(val.desc){%>[<%=val.desc%>]<%}%>
+                                <a href="/admin/edit/<%=val.uri%>">编辑</a>
+                                <a onclick="return confirm('确认删除吗？');" href="/admin/del/<%=val.uri%>">删除</a>
+                                <a href="/doc/<%=val.uri%>" target="_blank">文档</a>
                             </li>
                         <%});%>
                     </ul>
