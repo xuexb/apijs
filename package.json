@@ -1,6 +1,6 @@
 {
   "name": "apijs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "本地接口测试",
   "main": "dist/main.js",
   "scripts": {
