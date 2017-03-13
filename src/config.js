@@ -10,8 +10,7 @@ export default {
     base: './',
     port: 8091,
     cachePath: './__cache/',
-    global: {},
     domain: '*',
     name: 'apijs',
-    defaultGroup: '默认'
+    admin: '/admin/'
 };
