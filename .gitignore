@@ -1,4 +1,5 @@
 node_modules
-__cache
+/__cache/
 *.log
 .DS_Store
+/lib
